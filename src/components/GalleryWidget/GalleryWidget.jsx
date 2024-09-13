@@ -60,13 +60,13 @@ const GalleryWidget = () => {
 	};
 
 	return (
-		<div className="w-11/12">
-			<nav className="flex justify-between items-center relative -top-7">
+		<div className="md:w-11/12 w-full">
+			<nav className=" flex flex-col md:flex-row md:justify-between md:items-center items-start relative md:-top-7">
 				<div className=" bg-[#171717] text-white rounded-[20px] w-[140px] h-[58px] flex justify-center items-center shadow-inner">
-					Gallery
+					<p className="text-[20px] font-bold">Gallery</p>
 				</div>
-				<div className="flex items-center space-x-2 relative ml-8">
-					<div className="btn-container rounded-full h-[32px] mb-2 relative -right-10">
+				<div className="flex items-center space-x-2 relative md:ml-8">
+					<div className="btn-container rounded-full h-[32px] mb-2 relative md:-right-10">
 						<input
 							type="file"
 							hidden
@@ -75,7 +75,7 @@ const GalleryWidget = () => {
 							onChange={addImageHandler}
 						/>
 						<label
-							className="bg-[#41474d] text-white rounded-full py-2 px-4 shadow-md add-btn"
+							className="bg-[#41474d] text-white rounded-full py-2 px-4 shadow-md add-btn font-medium"
 							htmlFor="upload"
 						>
 							+ADD IMAGE
@@ -83,18 +83,18 @@ const GalleryWidget = () => {
 					</div>
 					<button onClick={() => slideController("prev")}>
 						<img
-							className="relative -right-14"
+							className="relative md:-right-14"
 							src={prevIcon}
 							alt=""
 						/>
 					</button>
 					<button onClick={() => slideController("next")}>
 						<img
-							className="relative -right-4"
+							className="relative md:-right-4 -left-8"
 							src={nextIcon}
 							alt=""
 						/>
-					</button>
+					</button>	
 				</div>
 			</nav>
 			<div className="">
@@ -106,7 +106,6 @@ const GalleryWidget = () => {
 					spaceBetween={20}
 					navigation={true}
 					virtual
-					className=""
 				>
 					{images.map((img, index) => (
 						<SwiperSlide key={index}>
