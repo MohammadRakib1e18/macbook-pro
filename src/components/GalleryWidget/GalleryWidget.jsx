@@ -90,7 +90,7 @@ const GalleryWidget = () => {
 					</button>
 					<button onClick={() => slideController("next")}>
 						<img
-							className="relative md:-right-4 -left-8"
+							className="relative md:-right-4"
 							src={nextIcon}
 							alt=""
 						/>
